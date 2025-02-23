@@ -1,9 +1,0 @@
-/Users/tomschonborn/Desktop/youtube_clone/backend/target/debug/deps/libeither-018cf147552d10ec.rmeta: /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/lib.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged_optional.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/iterator.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/into_either.rs
-
-/Users/tomschonborn/Desktop/youtube_clone/backend/target/debug/deps/either-018cf147552d10ec.d: /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/lib.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged_optional.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/iterator.rs /Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/into_either.rs
-
-/Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/lib.rs:
-/Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged.rs:
-/Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/serde_untagged_optional.rs:
-/Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/iterator.rs:
-/Users/tomschonborn/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/either-1.14.0/src/into_either.rs:
