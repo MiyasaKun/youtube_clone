@@ -1,0 +1,33 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies
+**/node_modules
+**/target
+
+# Environment files
+**/.env*
+
+# Development files
+**/.vscode
+**/.idea
+**/*.md
+**/docker-compose.yml
+**/Dockerfile*
+
+# Build artifacts
+**/dist
+**/build
+**/.svelte-kit
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/logs
+**/*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

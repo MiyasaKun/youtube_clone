@@ -1,0 +1,43 @@
+# Use the latest Rust image as the build stage
+FROM rust:latest as builder
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the Cargo.toml and Cargo.lock files
+COPY Cargo.toml Cargo.lock ./
+
+# Create a dummy main.rs file to build dependencies
+RUN mkdir src && echo "fn main() {println!(\"Hello, world!\");}" > src/main.rs
+
+# Build dependencies - this layer will be cached if dependencies do not change
+RUN cargo build --release
+
+# Remove the dummy main.rs file
+RUN rm -f src/main.rs
+
+# Copy the source code
+COPY src ./src
+
+# Build the actual application
+RUN cargo build --release
+
+# Use a minimal image for the production stage
+FROM debian:bullseye-slim
+
+# Set the working directory inside the container
+WORKDIR /usr/local/bin
+
+# Install required system dependencies for the Rust binary
+RUN apt-get update && \
+    apt-get install -y ca-certificates libssl1.1 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy the built binary from the builder stage
+COPY --from=builder /usr/src/app/target/release/backend .
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Run the binary
+CMD ["./backend"]

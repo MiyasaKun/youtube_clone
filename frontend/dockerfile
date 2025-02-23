@@ -1,0 +1,28 @@
+# Use the latest Deno image
+FROM denoland/deno:alpine-1.30.3
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the SvelteKit files
+COPY frontend/deps.ts .
+COPY frontend/svelte.config.js .
+COPY frontend/package.json .
+COPY frontend/package-lock.json .
+COPY frontend/src ./src
+
+# Cache the dependencies as a layer
+RUN deno cache deps.ts
+
+# Install Node.js dependencies
+RUN apk add --no-cache nodejs npm && \
+    npm install
+
+# Build the SvelteKit application
+RUN npm run build
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Run the SvelteKit application
+CMD ["deno", "run", "--allow-net", "--allow-read", "build"]

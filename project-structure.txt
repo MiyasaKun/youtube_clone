@@ -1,0 +1,35 @@
+youtube-clone/
+├── frontend/
+│   ├── src/
+│   │   ├── lib/
+│   │   │   ├── components/
+│   │   │   │   ├── common/
+│   │   │   │   ├── video/
+│   │   │   │   └── user/
+│   │   │   ├── stores/
+│   │   │   ├── utils/
+│   │   │   └── api/
+│   │   ├── routes/
+│   │   │   ├── +page.svelte
+│   │   │   ├── video/
+│   │   │   ├── channel/
+│   │   │   └── auth/
+│   │   └── app.html
+│   ├── static/
+│   └── tests/
+├── backend/
+│   ├── src/
+│   │   ├── main.rs
+│   │   ├── config/
+│   │   ├── routes/
+│   │   ├── handlers/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── migrations/
+│   └── tests/
+├── docker/
+│   ├── docker-compose.yml
+│   ├── frontend.Dockerfile
+│   └── backend.Dockerfile
+└── README.md
