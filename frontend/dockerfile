@@ -1,34 +1,28 @@
-# Build stage
-FROM node:20-alpine as build
+# Use the latest Deno image
+FROM denoland/deno:alpine-1.30.3
 
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy the SvelteKit files
+COPY frontend/deps.ts .
+COPY frontend/svelte.config.js .
+COPY frontend/package.json .
+COPY frontend/package-lock.json .
+COPY frontend/src ./src
 
-# Install dependencies
-RUN npm ci
+# Cache the dependencies as a layer
+RUN deno cache deps.ts
 
-# Copy the rest of the application code
-COPY . .
+# Install Node.js dependencies
+RUN apk add --no-cache nodejs npm && \
+    npm install
 
-# Build the application
+# Build the SvelteKit application
 RUN npm run build
-
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Copy built assets from build stage
-COPY --from=build /app/build ./build
-COPY --from=build /app/package*.json ./
-
-# Install production dependencies only
-RUN npm ci --production
 
 # Expose the port the app runs on
 EXPOSE 3000
 
-# Start the application
-CMD ["node", "build"]
+# Run the SvelteKit application
+CMD ["deno", "run", "--allow-net", "--allow-read", "build"]
