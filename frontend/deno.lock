@@ -23,7 +23,7 @@
     "npm:typescript-eslint@^8.20.0": "8.24.1_eslint@9.20.1_typescript@5.7.3_@typescript-eslint+parser@8.24.1__eslint@9.20.1__typescript@5.7.3",
     "npm:typescript@5": "5.7.3",
     "npm:vite@6": "6.1.1_lightningcss@1.29.1",
-    "npm:vitest@3": "3.0.6_jsdom@25.0.1_vite@6.1.1"
+    "npm:vitest@^3.0.6": "3.0.6_jsdom@25.0.1_vite@6.1.1"
   },
   "npm": {
     "@adobe/css-tools@4.4.2": {
@@ -2056,7 +2056,7 @@
         "npm:typescript-eslint@^8.20.0",
         "npm:typescript@5",
         "npm:vite@6",
-        "npm:vitest@3"
+        "npm:vitest@^3.0.6"
       ]
     }
   }
